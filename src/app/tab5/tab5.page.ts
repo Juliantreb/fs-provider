@@ -5,11 +5,11 @@ import { NavController } from '@ionic/angular';
 import { User } from '../model';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: './tab1.page.html',
-  styleUrls: ['./tab1.page.scss'],
+  selector: 'app-tab5',
+  templateUrl: './tab5.page.html',
+  styleUrls: ['./tab5.page.scss'],
 })
-export class Tab1Page implements OnInit {
+export class Tab5Page implements OnInit {
   ngOnInit(): void {
     throw new Error("Method not implemented.");
   }
@@ -19,11 +19,13 @@ export class Tab1Page implements OnInit {
   public user1: User;
   constructor(private navCtrl: NavController) {
     this.user1 = new User();
-    this.user1.firstname = "Julian";
-    this.user1.lastname = "Trebach";
-    this.user1.livesin="Bronx, New York";
-    this.user1.joinedin="May, 2015";
-
+    this.user1.rental1 = "Lisbon, Portugal";
+    this.user1.rentalphoto1 ="https://traveltipy.com/wp-content/uploads/2018/07/airbnb-lisbon-alfama-3.jpg";
+    
     this.user.push(this.user1);
   }
+  gorentdtls() {
+    this.navCtrl.navigateForward('rental-details1');
+  }
 }
+

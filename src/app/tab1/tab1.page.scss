@@ -1,4 +1,36 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+.avatar {
+  margin: auto;
+  width: 20% ;
+  height: 20%;    
+}
+
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+
+.center{
+  text-align: center;
+  margin:auto;
+}
+
+ion-content {
+  overflow-y: scroll;
+
+}
+.Chip{
+  color: lightblue;
+}
+
+
+ion-card{
+  background-color: whitesmoke;
+}
+ion-content {
+  --background: none;
+  background-image: url('http://stadiumparkingguides.com/wp-content/uploads/2014/10/nationals_park_parking.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
