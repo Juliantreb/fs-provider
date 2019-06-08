@@ -3,7 +3,7 @@
   <ion-toolbar>
     <div>
       <ion-buttons>
-        <ion-back-button defaultHref="" >Logout</ion-back-button>
+        <ion-back-button defaultHref=""  Logout></ion-back-button>
       </ion-buttons>
     </div>
     <ion-title>
@@ -20,14 +20,14 @@
   <div class="ion-padding">
     <ion-avatar class="avatar">
       <img id="imgSection"
-        src="https://media.licdn.com/dms/image/C4D03AQGvGMGxA98h6g/profile-displayphoto-shrink_200_200/0?e=1561593600&v=beta&t=vaRw_tCGehIzVYgKWU5W_bINEOHius-npp7I95P94Ik" />
+        src="{{provider.profilephoto}}" />
     </ion-avatar>
   </div>
   
   <div class="center" >
     <ion-badge color=light>
-      <h1>{{user1.firstname}} {{user1.lastname}}</h1>
-      -"Hi, I'm {{user1.firstname}}!"
+      <h1>{{provider.name}}</h1>
+      -"Hi, I'm {{provider.name}}!"
     </ion-badge>
   </div>
   
@@ -37,20 +37,20 @@
     <ion-card>
       <h3>About</h3>
       <h6>
-        <ion-icon name="home"></ion-icon> Lives in {{user1.livesin}}
+        <ion-icon name="home"></ion-icon> Lives in {{provider.livesin}}
       </h6>
       <h6>
-        <ion-icon name="logo-facebook"></ion-icon> Connected
+        <ion-icon name="logo-facebook"></ion-icon> {{provider.facebook}}
       </h6>
       <h6>
-        <ion-icon name="star"></ion-icon> Joined in {{user1.joinedin}}
+        <ion-icon name="star"></ion-icon> Joined on {{provider.today}}
       </h6>
     </ion-card>
     <ion-card>
       <h3>Julian Provided</h3>
       <h6>
-        <ion-icon name="checkmark-circle-outline"></ion-icon> Email Address<ion-icon name="checkmark-circle-outline">
-        </ion-icon> Phone Number
+        <ion-icon name="checkmark-circle-outline"></ion-icon> Email: {{provider.email}}<ion-icon name="checkmark-circle-outline">
+        </ion-icon> Phone Number: {{provider.phonenumber}}
       </h6>
     </ion-card>
     <ion-card>

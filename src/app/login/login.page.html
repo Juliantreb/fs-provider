@@ -3,23 +3,22 @@
 	<ion-row justify-content-center>
 		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
 			<div text-center>
-				<h4>Welcome Back!</h4>
+				<h4>Welcome Back, Provider!</h4>
 			</div>
-			<div padding>
-				<ion-item>
-					<ion-input type="text" placeholder="Username"></ion-input>
-				</ion-item>
+			<ion-item>
+					<ion-label>Email</ion-label>
+					<ion-input [(ngModel)]="provider.email"></ion-input>
+				  </ion-item>
+			  
+				  <ion-item>
+					<ion-label>Password</ion-label>
+					<ion-input [(ngModel)]="provider.password"></ion-input>
+				  </ion-item>
 
-				<ion-item>
-					<ion-input type="password" placeholder="Password"></ion-input>
-				</ion-item>
-			</div>
-
 			<div padding>
-				<ion-button (click)="loginClick()" expand="block">Login</ion-button>
+				<ion-button (click)="Login()" expand="block">Login</ion-button>
       </div>
       <ion-button (click)="goLogin()" expand="block">Register</ion-button>
 		</ion-col>
 	</ion-row>
 </ion-grid>
-

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Provider } from '../model';
+import {HttpClient } from "@angular/common/http";
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
-
-import { User } from '../model';
 
 @Component({
   selector: 'app-tab1',
@@ -10,20 +11,54 @@ import { User } from '../model';
   styleUrls: ['./tab1.page.scss'],
 })
 export class Tab1Page implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
+  public provider: Provider = new Provider ();
+
+  constructor(
+    private navCTRL: NavController, 
+    private http: HttpClient ,
+    private activatedRoute: ActivatedRoute
+    ){}
+
+  
+    ngOnInit() {
+      this.activatedRoute.queryParamMap.subscribe(
+        (parameters: ParamMap) => {
+          console.log(parameters);
+          console.log("provider_id is: " + parameters.get("provider_id"))
+  
+  
+          const providerId = localStorage.getItem("provider_id");
+  
+  
+          this.http
+            .get(`http://localhost:3000/api/providers/${providerId}`)
+            .subscribe(
+              (response: Provider) => {
+                console.log("response: " + response);
+                this.provider.id = response.id;
+                this.provider.name = response.name;
+                this.provider.email = response.email;
+                this.provider.profilephoto = response.profilephoto;
+                this.provider.today = response.today;
+                this.provider.facebook = response.facebook;
+                this.provider.phonenumber = response.phonenumber;
+                this.provider.livesin= response.livesin;
+              }
+            );
+  
+  
+          /*Express:
+          return res.json({
+            id: 123,
+            name:"",
+            emai:""
+  
+          })
+          */
+  
+  
+        }
+      );
+    }
+  
   }
-
-
-  public user: Array<User> = [];
-  public user1: User;
-  constructor(private navCtrl: NavController) {
-    this.user1 = new User();
-    this.user1.firstname = "Julian";
-    this.user1.lastname = "Trebach";
-    this.user1.livesin="Bronx, New York";
-    this.user1.joinedin="May, 2015";
-
-    this.user.push(this.user1);
-  }
-}

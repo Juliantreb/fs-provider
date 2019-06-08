@@ -1,1 +1,1 @@
-export * from './user.model';
+export * from './provider.model';

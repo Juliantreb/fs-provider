@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 
-import { User } from '../model';
+import { Provider } from '../model';
 
 @Component({
   selector: 'app-tab5',
@@ -15,14 +15,14 @@ export class Tab5Page implements OnInit {
   }
 
 
-  public user: Array<User> = [];
-  public user1: User;
+  public provider: Array<Provider> = [];
+  public provider1: Provider;
   constructor(private navCtrl: NavController) {
-    this.user1 = new User();
-    this.user1.rental1 = "Lisbon, Portugal";
-    this.user1.rentalphoto1 ="https://traveltipy.com/wp-content/uploads/2018/07/airbnb-lisbon-alfama-3.jpg";
+    this.provider1 = new Provider();
+    this.provider1.rental1 = "Lisbon, Portugal";
+    this.provider1.rentalphoto1 ="https://traveltipy.com/wp-content/uploads/2018/07/airbnb-lisbon-alfama-3.jpg";
     
-    this.user.push(this.user1);
+    this.provider.push(this.provider1);
   }
   gorentdtls() {
     this.navCtrl.navigateForward('rental-details1');

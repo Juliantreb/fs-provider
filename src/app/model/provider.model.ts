@@ -1,12 +1,22 @@
-export class User {
+export class Provider {
     public firstname: string;
     public lastname: string;
     public livesin: string;
     public joinedin: string;
     public rental1: string;
     public rentalphoto1: string;
-    
+
+    public name: string;
+    public id: number;
+    public email: string;
+    public profilephoto: string;
     private age: number;
+    public password: string;
+    public today: string;
+    public facebook: string;
+    public phonenumber: string;
+    
+
 
     constructor() {
         this.firstname="";
@@ -15,6 +25,14 @@ export class User {
         this.joinedin="";
         this.rental1="";
         this.rentalphoto1="";
+        this.name="";
+        this.id= -1;
+        this.email="";
+        this.password="";
+        this.profilephoto="";
+        this.facebook="";
+        this.profilephoto="";
+        this.today="";
 
     }
 
