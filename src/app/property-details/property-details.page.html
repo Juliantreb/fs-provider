@@ -1,13 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Property Details</ion-title>
+      <ion-back-button defaultHref="/tabs/tab5"  Logout></ion-back-button>
+    <ion-title class="center"><h1>Property Details</h1></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
   
-    {{property.name}}
+    <h1>{{property.name}}</h1>
+    
+
+    <ion-img src="{{property.imageURL}}"></ion-img>
+    <ion-card-content>
+     <ion-card> <h2> Location: {{property.location}} </h2></ion-card>
+     <ion-card>  <h2>Address: {{property.address}} </h2></ion-card>
+     <ion-card> <h2>Price Per Night: ${{property.pricePerNight}} </h2></ion-card>
+      <ion-card> <h2>Description: {{property.description}} </h2></ion-card>
+    </ion-card-content>
+    
+    <ion-button expand="block" mode="ios" (click)="submit()">Edit Property</ion-button>
 
   </ion-card>
 </ion-content>

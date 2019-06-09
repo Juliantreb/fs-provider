@@ -8,4 +8,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+
+    <ion-content>
+        <ion-card *ngFor="let property of properties" >
+          <ion-img src="{{property.imageURL}}"></ion-img>
+          <ion-card-title>
+            <h1 *ngIf= >{{property.name}}</h1>
+          </ion-card-title>
+      
+        </ion-card>
+      
+      </ion-content>
+

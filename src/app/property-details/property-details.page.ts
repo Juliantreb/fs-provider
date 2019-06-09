@@ -16,10 +16,9 @@ export class PropertyDetailsPage implements OnInit {
   constructor(private http: HttpClient,
     private navCTRL: NavController,
     private activatedRoute: ActivatedRoute) {}
+    
 
-
-  
-  ngOnInit(): void {
+ ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe(
       (parameters: any) => {
         console.log(parameters);
@@ -38,4 +37,8 @@ export class PropertyDetailsPage implements OnInit {
     )
   }
 
+  
+
     )}}
+
+    
