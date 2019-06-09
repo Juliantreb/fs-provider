@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 
-import { Provider } from '../model';
+import { HttpClient } from '@angular/common/http';
+import { Property } from '../model/property.model';
 
 @Component({
   selector: 'app-tab5',
@@ -10,22 +11,49 @@ import { Provider } from '../model';
   styleUrls: ['./tab5.page.scss'],
 })
 export class Tab5Page implements OnInit {
+  
   ngOnInit(): void {
-    throw new Error("Method not implemented.");
+    // const headers = {
+    //   'Access-Control-Allow-Origin': '*'
+    // };
+    // const options = {
+    //   headers: headers
+    // };
+    this.client
+    .get('http://localhost:3000/api/properties')
+    .subscribe( 
+      (response) => {
+        this.properties = response;
+        
+        
+      }
+    )
   }
 
+  public properties: any = [];
 
-  public provider: Array<Provider> = [];
-  public provider1: Provider;
-  constructor(private navCtrl: NavController) {
-    this.provider1 = new Provider();
-    this.provider1.rental1 = "Lisbon, Portugal";
-    this.provider1.rentalphoto1 ="https://traveltipy.com/wp-content/uploads/2018/07/airbnb-lisbon-alfama-3.jpg";
-    
-    this.provider.push(this.provider1);
+  constructor(private navCtrl: NavController,
+    private client: HttpClient) {
+
   }
-  gorentdtls() {
-    this.navCtrl.navigateForward('rental-details1');
-  }
+
+navToProperty(property: Property) {
+  
+  this.navCtrl
+  
+    .navigateForward("property-details", {
+      
+      queryParams: {
+        q: "ionic",
+        propertyImgURL: property.imageURL,
+        propertyId: property.id,
+        propertyAddress: property.address,
+        propertyLocation: property.location,
+        propertyDescription: property.description,
+        propertyPricePerNIght: property.pricePerNight,
+        propertyProviderId: property.providerId,
+        propertyName: property.name,
+      }
+    });
 }
-
+}

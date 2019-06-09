@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-        <div class="center">
-            <h1>Create Rentals</h1>
-          </div>
+      <div class="center">
+        <h1>Create Rentals</h1>
+      </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,39 +12,45 @@
   <ion-card>
 
   </ion-card>
-<ion-grid>
-	<ion-row justify-content-center>
-		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-			<div text-center>
-			</div>
-			<div padding>
-				<ion-item>
-					<ion-input type="text" placeholder="Address"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-input type="text" placeholder="Description"></ion-input>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+        </div>
+        <div class="ion-padding">
+          <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input [(ngModel)]="property.name"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Address</ion-label>
+            <ion-input [(ngModel)]="property.address"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Location</ion-label>
+            <ion-input [(ngModel)]="property.location" placeholder="City,Country"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Price Per Night</ion-label>
+            <ion-input [(ngModel)]="property.pricePerNight"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Property Description:</ion-label>
+            <ion-input [(ngModel)]="property.description"></ion-input>
           </ion-item>
           <ion-item>
-              <ion-input type="text" placeholder="Price"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-input type="text" placeholder="Available Dates"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-input type="text" placeholder="Extra Information"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-input type="text" placeholder="Location (City, Country)"></ion-input>
-                  </ion-item>
-				<ion-item>
-					<ion-input type="password" placeholder="Password"></ion-input>
-				</ion-item>
-			</div>
-
-			<div padding>
-				<ion-button (click)="Create()" expand="block">Create!</ion-button>
+            <ion-label>Listing Image URL</ion-label>
+            <ion-input [(ngModel)]="property.imageURL"></ion-input>
+          </ion-item>
       </div>
-		</ion-col>
-	</ion-row>
-</ion-grid>
+
+      
+      <ion-button expand="block" (click)="Button()">Create</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

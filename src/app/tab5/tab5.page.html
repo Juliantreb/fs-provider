@@ -2,19 +2,25 @@
   <ion-toolbar>
     <ion-title>
       <div class="center">
-      <h1>Your Existing Rentals</h1>
-    </div>
-  </ion-title>
+        <h1>Your Existing Rentals</h1>
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-badge>
-<ion-tab-button tab="tab4">
+  <ion-tab-button tab="tab4">
     <ion-icon name="create"></ion-icon>
     <ion-label>Create Rentals</ion-label>
   </ion-tab-button>
-</ion-badge> 
+</ion-badge>
 
 <ion-content>
-  
+  <ion-card *ngFor="let property of properties" (click)=navToProperty(property)>
+    <ion-img src="{{property.imageURL}}"></ion-img>
+    <ion-card-title>
+      <h1>{{property.name}}</h1>
+    </ion-card-title>
 
-</ion-content> 
+  </ion-card>
+
+</ion-content>
