@@ -38,6 +38,10 @@ export class Tab4Page implements OnInit {
       .subscribe(
         (response) => {
           console.log(response);
+          const propertyId = JSON.parse(JSON.stringify(response)).id;
+
+          localStorage.setItem("property_id", propertyId)
+
           
 
           this.navCTRL.navigateForward (

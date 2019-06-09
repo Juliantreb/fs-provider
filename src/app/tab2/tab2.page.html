@@ -10,10 +10,15 @@
 
 
     <ion-content>
-        <ion-card *ngFor="let property of properties" >
-          <ion-img src="{{property.imageURL}}"></ion-img>
+        <ion-card *ngFor="let booking of bookings" >
+       
+
+        
           <ion-card-title>
-            <h1 *ngIf= >{{property.name}}</h1>
+            <h1>{{booking.name}}</h1>
+            Booked From : ({{booking.dateFrom}})
+            To : ({{booking.dateTo}})
+            
           </ion-card-title>
       
         </ion-card>

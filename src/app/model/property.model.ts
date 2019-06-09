@@ -7,7 +7,8 @@ export class Property {
     public pricePerNight: string;
 
     public providerId: number;
-    public id: number
+    public id: number;
+
 
 
 
@@ -22,6 +23,7 @@ export class Property {
         this.pricePerNight = "";
         this.providerId = -1;
         this.id = -1;
+    
     }
 
 }
